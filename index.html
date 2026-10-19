@@ -62,6 +62,30 @@
     <textarea id="noteInput" placeholder="write your note here..."></textarea>
     <button id="addNoteButton">Add note</button>
     <ul id="notesList"></ul>
+    <script>
+      const noteInput = document.getElementById("noteInput");
+      const addNoteButton = document.getElementById("addNoteButton");
+      const notesList = document.getElementById("notesList");
+      addNoteButton.addEventListener("click", function() {
+        const noteText = noteInput.value.trim();
+        if (noteText.trim() === "") {
+          alert("please write a note first!")
+          return;
+        }
+        const noteItem = document.createElement("li");
+        const noteContent = document.creatElement("span");
+        noteContent.textContent = noteText;
+        noteItem.appendChild(noteContent);
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        noteItem.appendChild(deleteButton);
+        deleteButton.addEventListener("click", function() {
+          noteItem.remove();
+        });
+        noteList.appendChild(noteItem);
+        noteInput.value = "";
+      });
+    </script>
   </body>
 </html>
   
