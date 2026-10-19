@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width", initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Notes App</title> 
     <style>
       body {
@@ -73,7 +73,7 @@
           return;
         }
         const noteItem = document.createElement("li");
-        const noteContent = document.creatElement("span");
+        const noteContent = document.createElement("span");
         noteContent.textContent = noteText;
         noteItem.appendChild(noteContent);
         const deleteButton = document.createElement("button");
@@ -82,7 +82,7 @@
         deleteButton.addEventListener("click", function() {
           noteItem.remove();
         });
-        noteList.appendChild(noteItem);
+        notesList.appendChild(noteItem);
         noteInput.value = "";
       });
     </script>
